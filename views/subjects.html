@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects</title>
+    <link rel="stylesheet" href="../css/subject.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li>
+                    <img id="logo" src="../img/qalam.svg" alt="Qalam Logo">
+                </li>
+                <li>
+                    ATTENDANCE MANAGEMENT SYSTEM
+                </li>
+                <li>
+                    <button id="logout-btn">Log Out</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-container">
+        <h1>Subjects</h1>
+        <div class="cards-container">
+            <!-- Subject Cards -->
+            <div class="card" onclick="location.href='attendance.html?course=CS101';">
+                <h2>Introduction to Programming</h2>
+                <p>Course Code: CS101</p>
+            </div>
+            <div class="card" onclick="location.href='attendance.html?course=MA202';">
+                <h2>Mathematics II</h2>
+                <p>Course Code: MA202</p>
+            </div>
+            <div class="card" onclick="location.href='attendance.html?course=PH103';">
+                <h2>Physics I</h2>
+                <p>Course Code: PH103</p>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+</body>
+</html>

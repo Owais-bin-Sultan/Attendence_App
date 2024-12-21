@@ -1,0 +1,75 @@
+:root {
+    --primary: rgb(17, 59, 102);
+    --secondary: #A9A9A9;
+    --tertiary: gray;
+    --text-color: #f00;
+    --body-color: #F7F7F7;
+    --footer-color: #383838;
+    --buttons-color: black;
+    --nav-text-color: white;
+    --heading-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+/* html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+} */
+
+#header {
+    font-family: var(--heading-font);
+    background-color: var(--primary);
+    width: 100vw;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    z-index: 2;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 0px;
+    line-height: 1;
+}
+
+#logout-btn {
+    background-color: #2e7d96;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: #5aa5aa;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+#logout-btn:active {
+    background-color: #5aa5aa;
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}

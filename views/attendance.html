@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="../css/student_attendence.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li>
+                    <img id="logo" src="../img/qalam.svg" alt="Qalam Logo">
+                </li>
+                <li>
+                    ATTENDANCE MANAGEMENT SYSTEM
+                </li>
+                <li>
+                    <button id="logout-btn">Log Out</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Background Container -->
+    <div class="bg-container">
+        <h1>Attendance</h1>
+
+        <!-- Nested Container -->
+        <div class="attendance-container" id="course-details">
+            <h2 id="course-name">Course Details</h2>
+            <p><strong>Course Name:</strong> <span id="course-name-detail"></span></p>
+            <p><strong>Total Classes Conducted:</strong> <span id="total-classes">30</span></p>
+            <p><strong>Classes Attended:</strong> <span id="classes-attended">25</span></p>
+            <p><strong>Course Code:</strong> <span id="course-code"></span></p>
+
+            <!-- Attendance Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="attendance-table">
+                    <!-- Attendance data will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for different courses
+        const courses = {
+            'CS101': { name: 'Introduction to Programming', totalClasses: 30, attended: 25, code: 'CS101' },
+            'MA202': { name: 'Mathematics II', totalClasses: 28, attended: 22, code: 'MA202' },
+            'PH103': { name: 'Physics I', totalClasses: 26, attended: 20, code: 'PH103' },
+        };
+
+        // Parse the query parameter
+        const params = new URLSearchParams(window.location.search);
+        const courseCode = params.get('course');
+
+        // Display course details based on the query parameter
+        if (courseCode && courses[courseCode]) {
+            const course = courses[courseCode];
+            document.getElementById('course-name-detail').textContent = course.name;
+            document.getElementById('total-classes').textContent = course.totalClasses;
+            document.getElementById('classes-attended').textContent = course.attended;
+            document.getElementById('course-code').textContent = course.code;
+
+            // Load attendance data (example data)
+            const tableBody = document.getElementById('attendance-table');
+            const sampleData = [
+                { date: '2024-10-01', status: 'P' },
+                { date: '2024-10-03', status: 'A' },
+                { date: '2024-10-05', status: 'P' }
+            ];
+
+            sampleData.forEach((entry, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${index + 1}</td><td>${entry.date}</td><td>${entry.status}</td>`;
+                tableBody.appendChild(row);
+            });
+        } else {
+            document.getElementById('course-details').innerHTML = '<p>Course not found!</p>';
+        }
+    </script>
+</body>
+</html>
+
+</html>
